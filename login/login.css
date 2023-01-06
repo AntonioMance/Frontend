@@ -1,0 +1,9 @@
+.container-fluid{
+  min-height: 969px;
+}
+
+body{
+  background-image:url("../slike/slika5.jpg");
+  background-size: cover;
+  }
+  

@@ -1,0 +1,9 @@
+body{
+  background-image:url("../slike/slika5.jpg");
+  background-size: cover; 
+}
+
+
+.posts{
+  min-height: 738px;
+}
