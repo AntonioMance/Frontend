@@ -1,0 +1,62 @@
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/PocetnaStranica.vue'
+import GeneralChat from '../views/GeneralChat.vue';
+import GameList from '../views/GameList.vue'
+
+
+const routes = [
+  {
+    path: '/',
+    name: 'PocetnaStranica',
+    component: HomeView
+  },
+  {
+    path: '/register',
+    name: 'register',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/RegisterPage.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/LoginPage.vue')
+  },
+  {
+    path: '/mainpage',
+    name: 'mainpage',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/MainPage.vue')
+  },
+  {
+    path: '/myprofile',
+    name: 'myprofile',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/MyProfile.vue')
+  },
+  {
+    path: '/generalchat',
+    name: 'GeneralChat',
+    component: GeneralChat,
+  },
+  {
+    path: '/gamelist',
+    name: 'gamelist',
+    component: GameList
+  },
+]
+
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
+});
+
+export default router;
