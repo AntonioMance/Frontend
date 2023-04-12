@@ -3,6 +3,8 @@ import HomeView from '../views/PocetnaStranica.vue'
 import GeneralChat from '../views/GeneralChat.vue';
 import GameList from '../views/GameList.vue'
 import UserProfile from "../views/UserProfile.vue";
+import ChatRoom from '../views/ChatRoom.vue'
+import GameChat from '../views/GameChat.vue';
 
 const routes = [
   {
@@ -56,6 +58,16 @@ const routes = [
     path: "/userprofile/:username",
     name: "UserProfile",
     component: UserProfile,
+  },
+  {
+    path: '/chat',
+    name: 'chat',
+    component: ChatRoom
+  },
+  {
+    path: '/gamechat',
+    name: 'gamechat',
+    component: GameChat
   },
 ]
 
