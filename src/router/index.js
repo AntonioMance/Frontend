@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/PocetnaStranica.vue'
 import GeneralChat from '../views/GeneralChat.vue';
 import GameList from '../views/GameList.vue'
-
+import UserProfile from "../views/UserProfile.vue";
 
 const routes = [
   {
@@ -51,6 +51,11 @@ const routes = [
     path: '/gamelist',
     name: 'gamelist',
     component: GameList
+  },
+  {
+    path: "/userprofile/:username",
+    name: "UserProfile",
+    component: UserProfile,
   },
 ]
 
