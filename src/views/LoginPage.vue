@@ -1,8 +1,9 @@
 <template>
+  <div class="image"></div>
   <div class="d-grid container-fluid">
     <div class="row">
-      <div class="col d-grid justify-content-center align-content-center">
-        <h1 class="display-1 text-primary fw-bold text pb-5 mb-3">LetsPlay</h1>
+      <div class="col d-grid justify-content-center align-content-center ">
+        <h1 class="display-1 text-danger fw-bold text mb-5 pb-5">LetsPlay</h1>
       </div>
       <div class="col d-grid justify-content-start align-content-center">
         <div class="row-3">
@@ -10,7 +11,7 @@
             <form class="form-floating">
               <input
                 type="email"
-                class="form-control mb-3 form-select-lg"
+                class="form-control mb-3 form-select-lg input-background"
                 id="username"
                 placeholder="Email"
                 v-model="email"
@@ -22,7 +23,7 @@
             <form class="form-floating">
               <input
                 type="password"
-                class="form-control mb-3 form-select-lg text-bg-"
+                class="form-control mb-3 form-select-lg input-background"
                 id="password"
                 placeholder="Password"
                 v-model="password"
@@ -33,19 +34,19 @@
           <div class="col">
             <button
               @click="($event) => loginFunction()"
-              class="btn btn-primary btn-lg"
+              class="btn btn-danger btn-lg"
             >
               Log in
             </button>
-            <h2>
+            <h2 class="text-secondary">
               Dont have an account?
-              <a href="../Register" class="text-info text-decoration-none"
+              <a href="../Register" class="text-danger text-decoration-none"
                 >Register
               </a>
             </h2>
-            <h3 class="text-center">
+            <h3 class="text-center text-secondary">
               back to
-              <a href="../" class="text-info text-decoration-none">website </a>
+              <a href="../" class="text-danger text-decoration-none">Home</a>
             </h3>
           </div>
         </div>
@@ -54,14 +55,25 @@
   </div>
 </template>
 
-
 <style scoped>
 .container-fluid {
   min-height: 969px;
 }
 
-body {
+.image{
+  background-image: url(../assets/redbackground.jpg);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.input-background{
+background-color:firebrick;
 }
 </style>
 

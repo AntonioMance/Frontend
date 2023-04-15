@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="background">
     <div class="container header sticky-top">
       <nav class="navbar navbar-expand-auto navbar-light">
         <h1 class="fw-bolder text-danger">
@@ -33,13 +33,13 @@
           <ul class="navbar-nav text-end ms-auto">
             <li>
               <a class="nav-link" href="../mainpage"
-                ><h5 class="text-danger fw-bold">
+                ><h5 class="text-info fw-bold">
                   Back to home
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="32"
                     height="32"
-                    fill="currentColor"
+                    fill="aqua"
                     class="bi bi-house h5 text-light"
                     viewBox="0 0 16 16"
                   >
@@ -50,14 +50,13 @@
               ></a>
             </li>
             <li>
-              <a class="nav-link" href="#"
-                ><h5 class="text-danger fw-bold">
+                ><h5 class="text-info fw-bold click"  @click="logout">
                   Log out
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="32"
                     height="32"
-                    fill="currentColor"
+                    fill="aqua"
                     class="bi bi-box-arrow-right h5 text-light"
                     viewBox="0 0 16 16"
                   >
@@ -70,7 +69,7 @@
                       d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
                     />
                   </svg></h5
-              ></a>
+              >
             </li>
           </ul>
         </div>
@@ -78,27 +77,32 @@
     </div>
 
     <div class="container main-content">
-      <h4>My gamelist:</h4>
-      <div class="game-list" v-for="game in gameList" :key="game">
-        {{ game }}
-      </div>
+      <div class="input-group w-25 pt-3">
+    <input type="text" class="form-control " placeholder="Add game" v-model="addGameInput" />
+    <button class="btn btn-outline-primary" @click="$event => addGame()">+</button>
+  </div>
 
-      <div class="addgame-area">
-        <input placeholder="Add game" v-model="addGameInput" />
-        <button @click="$event => addGame()">+</button>
-      </div>
-      
-      <div class="removegame-area">
-        <input placeholder="Remove game" v-model="removeGameInput" />
-        <button @click="$event => removeGame(removeGameInput)">-</button>
-      </div>
-      <div>
-      <p>{{ statusText }}</p>
-      <button @click="changeStatus(1)">Online</button>
-      <button @click="changeStatus(2)">Idle</button>
-      <button @click="changeStatus(3)">Away</button>
-      <button @click="changeStatus(4)">Offline</button>
+  <div class="input-group my-3 w-25">
+    <input type="text" class="form-control" placeholder="Remove game" v-model="removeGameInput" />
+    <button class="btn btn-outline-danger" @click="$event => removeGame(removeGameInput)">-</button>
+  </div>
+  <h3>My gamelist:</h3>
+  <div class="game-list " v-for="game in gameList" :key="game">
+    <li class="fs-3 text">
+      {{ game }}
+    </li> 
+  </div>
+  <div>
+    <h3>Add status:</h3>
+    <div class="btn-group mb-3" role="group">
+      <button class="btn btn-outline-success" @click="changeStatus(1)">Online</button>
+      <button class="btn btn-outline-warning" @click="changeStatus(2)">Idle</button>
+      <button class="btn btn-outline-danger"  @click="changeStatus(3)">Away</button>
+      <button class="btn btn-outline-secondary" @click="changeStatus(4)">Offline</button>
     </div>
+    <h3>Status:</h3>
+    <p class="fs-4 text fw-bold">{{ statusText }}</p>
+  </div>
     
     <div class="row">
           <div class="col">
@@ -162,48 +166,56 @@
           </div>
         </div>
         <div class="follow-list">
-  <h3>Follow List</h3>
-  <ul>
-    <li v-for="(username, index) in followList" :key="index">
-      {{ username }}
-    </li>
-  </ul>
-</div>
- <div>
+          <h3>Follow List</h3>
+            <ul>
+              <li class="fs-4 text fw-bold" v-for="(username, index) in followList" :key="index">
+                {{ username }}
+              </li>
+            </ul>
+        </div>
+
+        <div>
     <h3>Add Availability</h3>
-    <input type="time" v-model="startTime" placeholder="Start time" />
-    <input type="time" v-model="endTime" placeholder="End time" />
-    <button @click="addAvailability">Add</button>
+    <div class="input-group my-3">
+      <input type="time" class="form-control" v-model="startTime" placeholder="Start time" />
+      <input type="time" class="form-control" v-model="endTime" placeholder="End time" />
+      <button class="btn btn-outline-primary" @click="addAvailability">Add</button>
+    </div>
   </div>
-<div>
+
+  <div>
     <h3>Availability</h3>
-    <ul>
-      <li v-for="(time, index) in availability" :key="index">
+    <ul class="list-group w-25">
+      <li class="list-group-item d-flex justify-content-between align-items-center mb-2" v-for="(time, index) in availability" :key="index">
         {{ time.start }} - {{ time.end }}
-        <button @click="removeAvailability(index)">Remove</button>
+        <button class="btn btn-danger btn-sm" @click="removeAvailability(index)">Remove
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+          </svg>
+        </button>
       </li>
     </ul>
   </div>
 
-<div>
+  <div>
     <h2>User Messages:</h2>
-    <ul>
-      <li v-for="(message, index) in userMessages" :key="index">
+    <ul class="list-group w-50">
+      <li class="list-group-item" v-for="(message, index) in userMessages" :key="index">
         {{ message.content }} ({{ formatTimestamp(message.timestamp) }})
       </li>
     </ul>
   </div>
 
-
   <div>
     <h3>People Played With:</h3>
-    <input type="number" v-model.number="peoplePlayedWithInput" placeholder="Update people played with" />
-    <button @click="updatePeoplePlayedWith(peoplePlayedWithInput)">Submit</button>
-    <p>{{ peoplePlayedWith }}</p>
-  </div>
-
-
+    <div class="input-group my-3 w-25">
+      <input type="number" class="form-control" v-model.number="peoplePlayedWithInput" placeholder="Update people played with" />
+      <button class="btn btn-outline-primary" @click="updatePeoplePlayedWith(peoplePlayedWithInput)">Submit</button>
     </div>
+    <p class="fs-3 text fw-bold">{{ peoplePlayedWith }}</p>
+  </div>
+</div>
   </div>
 </template>
 
@@ -551,17 +563,31 @@ async getUserMessages() {
       console.error("Error:", error);
     }
   },
+  logout() {
+      this.$cookies.remove("username");
+      this.$cookies.remove("email");
+      this.$cookies.remove("loginToken");
+      this.$router.push("/").then(() => {
+        window.location.reload();
+      });
+    },
 
-
-
-    
-    
   },
 };
 </script>
 
 
 <style scoped>
+.background{
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: 100vh; 
+  background-color: #023e7d;
+}
 body {
   background-size: cover;
 }
@@ -573,11 +599,9 @@ body {
   background-color: #8ecae6;
 }
 
-.addgame-area {
-  display: flex;
+.click{
+  cursor: pointer;
 }
-.removegame-area {
-  display: flex;
-}
+
 
 </style>

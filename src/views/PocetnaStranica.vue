@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div >
+    <div class="image"></div>
     <div class="container-fluid d-grid">
       <div class="row text-center">
         <div class="col">
-          <h1 class="display-2 text-primary fw-bolder">Welcome</h1>
+          <h1 class="display-2 text-danger fw-bolder">Welcome</h1>
         </div>
-        <h1 class="display-2 text-primary fw-bolder pb-5">LetsPlay!</h1>
+        <h1 class="display-2 text-danger fw-bolder pb-5">LetsPlay!</h1>
       </div>
     </div>
     <div class="container-fluid d-grid justify-content-center">
@@ -19,7 +20,6 @@
         aria-expanded="false"
         aria-label="Toggle navigation">
         <i class="bi bi-play-circle-fill display-1 text-danger"></i>
-        
       </a>
       </nav>
     </div>
@@ -30,7 +30,7 @@
                 <div class="row pt-5">
                   <div class="col-4 offset-4  ">
                     <div class="d-grid ">
-                      <a class="btn btn-dark text-start  rounded-4 btn-lg text-primary" href="../Register">Register</a>
+                      <a class="btn btn-dark text-start  rounded-4 btn-lg text-danger" href="../Register">Register</a>
                     </div>
                 </div>
               </div>
@@ -39,7 +39,7 @@
                 <div class="row  ">
                   <div class="col-4 offset-4 gy-4 ">
                     <div class="d-grid ">
-                      <a class="btn btn-dark text-start  rounded-4 btn-lg text-primary" href="../login">Log in</a>
+                      <a class="btn btn-dark text-start  rounded-4 btn-lg text-danger" href="../login">Log in</a>
                         
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                 <div class="row  ">
                   <div class="col-4 offset-4 gy-4 ">
                     <div class="d-grid ">
-                      <a class="btn btn-dark text-start  rounded-4 btn-lg text-primary" @click="enterAsGuest">Guest</a>
+                      <a class="btn btn-dark text-start  rounded-4 btn-lg text-danger" @click="enterAsGuest">Guest</a>
                     </div>
                 </div>
                 </div>
@@ -61,10 +61,7 @@
 </template>
 
 <script>
-
-
 export default {
-  
   methods: {
   enterAsGuest() {
     this.$cookies.remove("loginToken");
@@ -73,9 +70,21 @@ export default {
     this.$cookies.set("guest", "true");
     this.$router.push({ name: "mainpage" });
   },
-
 },
-
-  
 };
 </script>
+
+<style scoped>
+.image {
+  background-image: url(../assets/redbackground.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+</style>

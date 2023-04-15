@@ -1,16 +1,11 @@
 <template>
+  <div class="image"></div>
   <div
     class="container-fluid d-grid justify-content-center justify-items-center align-items-center text-center"
   >
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/register">Register</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/unregistered">Unregistered</router-link>
-    </nav>
     <div class="row">
       <div class="col">
-        <h1 class="display-1 text-primary fw-bold">LetsPlay</h1>
+        <h1 class="display-1 text-danger fw-bold">LetsPlay</h1>
       </div>
     </div>
     <div class="align-content-lg-center">
@@ -19,7 +14,7 @@
           <form class="form-floating">
             <input
               type="text"
-              class="form-control mb-3 form-select-lg text-bg-"
+              class="form-control mb-3 form-select-lg input-background"
               id="username"
               placeholder="Username"
               v-model="username"
@@ -33,7 +28,7 @@
           <form class="form-floating">
             <input
               type="email"
-              class="form-control mb-3 form-select-lg"
+              class="form-control mb-3 form-select-lg input-background"
               id="Email1"
               aria-describedby="emailHelp"
               placeholder="Enter email"
@@ -48,30 +43,36 @@
           <form class="form-floating">
             <input
               type="password"
-              class="form-control form-select-lg"
+              class="form-control form-select-lg input-background"
               id="password"
               placeholder="Password"
               v-model="password"
             />
             <label for="floatingInput">Password</label>
           </form>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
+         
+         <div>
           <button
             @click="($event) => registerFunction()"
-            class="btn btn-primary btn-lg"
-          >
+            class="btn btn-danger btn-lg text-dark mt-4"
+            >
             Create new account
           </button>
+        </div>
+        <div class="row d-flex">
+          <div class="col-7">
+            <router-link to="/" class="btn btn-danger btn-lg mt-4 text-dark">Return Home</router-link>
+          </div>
+         <div class="col">
+          <router-link to="/login" class="btn btn-danger btn-lg mt-4 text-dark">Log in</router-link>
+        </div>
+        </div>
+        
         </div>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -122,3 +123,26 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.image{
+  background-image: url(../assets/redbackground.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.container-fluid{
+min-height: 700px;
+}
+
+.input-background{
+background-color:firebrick;
+}
+</style>
