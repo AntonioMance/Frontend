@@ -362,7 +362,7 @@ export default {
         if (res.status === 200 && res.statusText === "OK") {
           setTimeout(() => {
             this.getMyGameList();
-          }, 100);
+          }, 300);
         } else {
           try {
             const data = await res.json();
@@ -370,7 +370,8 @@ export default {
             console.log(this.gameList);
             setTimeout(() => {
               this.getMyGameList();
-            }, 100);
+              window.location.reload();
+            }, 300);
           } catch (error) {
             console.error("Error parsing JSON response:", error);
           }
@@ -400,7 +401,8 @@ export default {
             console.log(this.gameList);
             setTimeout(() => {
               this.getMyGameList();
-            }, 100);
+              window.location.reload();
+            }, 300);
           } catch (error) {
             console.error("Error parsing JSON response:", error);
           }
