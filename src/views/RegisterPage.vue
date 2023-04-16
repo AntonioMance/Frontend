@@ -5,7 +5,8 @@
   >
     <div class="row">
       <div class="col">
-        <h1 class="display-1 text-danger fw-bold">LetsPlay</h1>
+        <h1 class="display-1 fw-bold" style="color: rgb(255, 125, 94); text-shadow: rgba(255,41,62,0.95) 0px 0px 30px; -webkit-text-stroke-width: 2px;   
+            -webkit-text-stroke-color: darkred; ">LetsPlay</h1>
       </div>
     </div>
     <div class="align-content-lg-center">
@@ -19,7 +20,7 @@
               placeholder="Username"
               v-model="username"
             />
-            <label for="floatingInput">Username</label>
+            <label class="inputLabel" for="floatingInput">Username</label>
           </form>
         </div>
       </div>
@@ -34,7 +35,7 @@
               placeholder="Enter email"
               v-model="email"
             />
-            <label for="Email1">Email address</label>
+            <label class="inputLabel" for="Email1">Email address</label>
           </form>
         </div>
       </div>
@@ -48,23 +49,23 @@
               placeholder="Password"
               v-model="password"
             />
-            <label for="floatingInput">Password</label>
+            <label class="inputLabel" for="floatingInput">Password</label>
           </form>
          
          <div>
-          <button
+          <button style="background-color: #b22124; color: rgb(255, 175, 154);"
             @click="($event) => registerFunction()"
-            class="btn btn-danger btn-lg text-dark mt-4"
+            class="btn btn-danger btn-lg mt-4"
             >
             Create new account
           </button>
         </div>
         <div class="row d-flex">
           <div class="col-7">
-            <router-link to="/" class="btn btn-danger btn-lg mt-4 text-dark">Return Home</router-link>
+            <router-link style="background-color: #b22124; color: rgb(255, 175, 154);" to="/" class="btn btn-danger btn-lg mt-4">Return Home</router-link>
           </div>
          <div class="col">
-          <router-link to="/login" class="btn btn-danger btn-lg mt-4 text-dark">Log in</router-link>
+          <router-link style="background-color: #b22124; color: rgb(255, 175, 154);" to="/login" class="btn btn-danger btn-lg mt-4">Log in</router-link>
         </div>
         </div>
         
@@ -143,6 +144,12 @@ min-height: 700px;
 }
 
 .input-background{
+color: rgb(255, 175, 154);
 background-color:firebrick;
 }
+
+.inputLabel {
+  color: rgb(255, 175, 154);
+}
+
 </style>

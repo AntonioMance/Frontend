@@ -3,7 +3,8 @@
   <div class="d-grid container-fluid">
     <div class="row">
       <div class="col d-grid justify-content-center align-content-center ">
-        <h1 class="display-1 text-danger fw-bold text mb-5 pb-5">LetsPlay</h1>
+        <h1 class="display-1 fw-bold text mb-5 pb-5" style="color: rgb(255, 125, 94); text-shadow: rgba(255,41,62,0.95) 0px 0px 30px; -webkit-text-stroke-width: 2px;   
+            -webkit-text-stroke-color: darkred; ">LetsPlay</h1>
       </div>
       <div class="col d-grid justify-content-start align-content-center">
         <div class="row-3">
@@ -16,7 +17,7 @@
                 placeholder="Email"
                 v-model="email"
               />
-              <label for="floatingInput">Email address</label>
+              <label class="inputLabel" for="floatingInput">Email address</label>
             </form>
           </div>
           <div class="col">
@@ -28,25 +29,27 @@
                 placeholder="Password"
                 v-model="password"
               />
-              <label for="floatingInput">Password</label>
+              <label class="inputLabel" for="floatingInput">Password</label>
             </form>
           </div>
-          <div class="col">
+          <div class="col" style="background-color: rgba(34, 34, 34, 0.6); border-radius: 15px; padding: 10px;">
             <button
               @click="($event) => loginFunction()"
-              class="btn btn-danger btn-lg"
+              class="btn btn-danger btn-lg" style="background-color: #b22124; color: rgb(255, 175, 154); margin-bottom: 15px;"
             >
               Log in
             </button>
-            <h2 class="text-secondary">
+            <h2 style="color: rgb(134, 134, 134);">
               Dont have an account?
-              <a href="../Register" class="text-danger text-decoration-none"
+              <a href="../Register" style="color: rgb(255, 135, 94);             -webkit-text-stroke-width: 1px;   
+            -webkit-text-stroke-color: red;  " class="text-decoration-none"
                 >Register
               </a>
             </h2>
-            <h3 class="text-center text-secondary">
+            <h3 class="text-center" style="color: rgb(134, 134, 134);">
               back to
-              <a href="../" class="text-danger text-decoration-none">Home</a>
+              <a href="../"  style="color: rgb(255, 135, 94);             -webkit-text-stroke-width: 1px;   
+            -webkit-text-stroke-color: red;" class="text-decoration-none">Home</a>
             </h3>
           </div>
         </div>
@@ -73,7 +76,12 @@
   z-index: -1;
 }
 .input-background{
+color: rgb(255, 175, 154);
 background-color:firebrick;
+}
+
+.inputLabel {
+  color: rgb(255, 175, 154);
 }
 </style>
 

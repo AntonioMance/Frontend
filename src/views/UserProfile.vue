@@ -2,7 +2,8 @@
   <div class="container-fluid">
     <div class="container header sticky-top">
       <nav class="navbar navbar-expand-auto navbar-light">
-        <h1 class="fw-bolder text-danger">
+        <h1 class="fw-bolder" style="color: rgb(255, 125, 94); text-shadow: rgba(255,41,62,0.95) 0px 0px 30px; -webkit-text-stroke-width: 2px;   
+            -webkit-text-stroke-color: darkred;">
           User profile
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +20,7 @@
           </svg>
         </h1>
         <button
-          class="navbar-toggler bg-danger"
+          class="navbar-toggler bg-primary"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#header"
@@ -95,7 +96,7 @@
       <div>
     <h3>Availability</h3>
     <ul class="list-group w-25">
-      <li class="list-group-item mb-2 " v-for="(time, index) in availability" :key="index">
+      <li style="background-color: gainsboro;" class="list-group-item mb-2 " v-for="(time, index) in availability" :key="index">
         {{ time.start }} - {{ time.end }}
       </li>
     </ul>
@@ -275,11 +276,18 @@ async getAvailability(username) {
   background-position: center center;
   background-attachment: fixed;
   min-height: 100vh; 
-  background-color: #023e7d;
+  background-image: url(../assets/mainpage.jpeg);
 }
 
 .main-content {
-  background-color: #8ecae6;
+  color: lightblue;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .click{
   cursor: pointer;

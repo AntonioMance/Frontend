@@ -6,13 +6,13 @@
           <div class="col">
             <nav class="navbar navbar-expand-lg bg-light">
               <div class="container">
-                <h3 class="display-5 fw-bolder text-primary">LetsPlay</h3>
+                <h3 class="display-5 fw-bolder text-primary ">LetsPlay</h3>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
                   height="32"
                   fill="aqua"
-                  class="bi bi-joystick me-3"
+                  class="bi bi-joystick m-3 "
                   viewBox="0 0 16 16"
                 >
                 <path
@@ -34,27 +34,27 @@
                   <span class="navbar-toggler-icon "></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                  <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item" style="margin-left: 25px;">
                       <router-link
                         v-if="!isGuest"
                         to="/MyProfile"
-                        class="btn btn-danger rounded-1 btn-lg rounded-3"
+                        class="btn btn-primary rounded-1 btn-lg rounded-3"
                         type="submit"
                       >
                         My profile
                       </router-link>
-                      <span v-else class="btn btn-danger rounded-1 btn-lg rounded-3 invisible" >
+                      <span v-else class="btn btn-primary rounded-1 btn-lg rounded-3 invisible" >
                         My profile
                       </span>
                     </li>
                     
                   </ul>
-                  <div>
-                    <button v-if="!isGuest" @click="logout" class="btn btn-danger btn-lg">
+                  <div style="margin-left: auto;">
+                    <button v-if="!isGuest" @click="logout" class="btn btn-primary btn-lg">
                       Log out
                     </button>
-                    <button v-else @click="redirectToRegister" class="btn btn-danger btn-lg">
+                    <button v-else @click="redirectToRegister" class="btn btn-primary btn-lg">
                       Register
                     </button>
                 </div>
@@ -154,7 +154,6 @@ export default {
   },
 
     redirectToRegister() {
-
       this.$router.push("/register").then(() => {
       window.location.reload();
     });
