@@ -3,7 +3,7 @@
     <div class="list-container">
       <div class="game-button">
         <router-link to="/mainpage" >
-          <img src="../assets/mainpage.jpeg" alt="" />
+          <img src="../assets/mainpage.png" alt="" />
           <div class="text">
             Back to mainpage
           </div>
@@ -38,35 +38,35 @@
         <div class="text">Sea Of Thieves</div>
       </div>
       <div class="game-button" @click="saveRoomInfo(10, 'Fps chess')">
-        <img src="../assets/fps_chess.jpg" alt="" />
+        <img src="../assets/fps_chess.png" alt="" />
         <div class="text">Fps chess</div>
       </div>
       <div class="game-button" @click="saveRoomInfo(11, 'Rust')">
-        <img src="../assets/rust.jpg" alt="" />
+        <img src="../assets/rust.png" alt="" />
         <div class="text">Rust</div>
       </div>
       <div class="game-button" @click="saveRoomInfo(12, 'Minecraft')">
-        <img src="../assets/minecraft.jpg" alt="" />
+        <img src="../assets/minecraft.png" alt="" />
         <div class="text">Minecraft</div>
       </div>
       <div class="game-button" @click="saveRoomInfo(13, 'Valheim')">
-        <img src="../assets/valheim.jpg" alt="" />
+        <img src="../assets/valheim.png" alt="" />
         <div class="text">Valheim</div>
       </div>
       <div class="game-button" @click="saveRoomInfo(14, 'Valorant')">
-        <img src="../assets/valorant.jpg" alt="" />
+        <img src="../assets/valorant.png" alt="" />
         <div class="text">Valorant</div>
       </div>
       <div class="game-button" @click="saveRoomInfo(15, 'Dota 2')">
-        <img src="../assets/dota2.jpg" alt="" />
+        <img src="../assets/dota2.png" alt="" />
         <div class="text">Dota2</div>
       </div>
       <div class="game-button" @click="saveRoomInfo(16, 'Fifa 23')">
-        <img src="../assets/fifa_23.jpg" alt="" />
+        <img src="../assets/fifa_23.png" alt="" />
         <div class="text">Fifa 23</div>
       </div>
       <div class="game-button" @click="saveRoomInfo(17, 'Elden Ring')">
-        <img src="../assets/elden_ring.jpg" alt="" />
+        <img src="../assets/elden_ring.png" alt="" />
         <div class="text">Elden Ring</div>
       </div>
     </div>
@@ -103,7 +103,7 @@ export default {
   gap: 15px;
 }
 .home-page {
-  background-image: url(../assets/mainpage.jpeg);
+  background-image: url(../assets/mainpage.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

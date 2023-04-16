@@ -93,7 +93,7 @@ export default {
     password: this.password,
   };
 
-  await fetch(`http://localhost:3000/app/users/register`, {
+  await fetch(`https://webapps-backend.onrender.com/app/users/register`, {
     method: "POST",
     body: JSON.stringify(json),
     credentials: "include",
@@ -127,7 +127,7 @@ export default {
 
 <style scoped>
 .image{
-  background-image: url(../assets/redbackground.jpg);
+  background-image: url(../assets/redbackground.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -88,7 +88,7 @@ export default {
 
     async getMessages() {
       try {
-        const response = await fetch(`http://localhost:3000/app/messages/${this.roomNumber}`); 
+        const response = await fetch(`https://webapps-backend.onrender.com/app/messages/${this.roomNumber}`); 
         if (response.ok) {
           this.messages = await response.json();
         } else {
@@ -110,7 +110,7 @@ export default {
         };
         this.inputMessage = "";
         try {
-          await fetch("http://localhost:3000/app/messages", {
+          await fetch("https://webapps-backend.onrender.com/app/messages", {
             method: "POST",
             credentials: "include", 
             headers: { "Content-Type": "application/json" },
@@ -163,7 +163,7 @@ export default {
 .container-fluid{
   display: grid;
   grid-template-rows: auto 1fr; 
-  background-image: url(../assets/mainpage.jpeg);
+  background-image: url(../assets/mainpage.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

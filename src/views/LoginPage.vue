@@ -64,7 +64,7 @@
 }
 
 .image{
-  background-image: url(../assets/redbackground.jpg);
+  background-image: url(../assets/redbackground.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -102,7 +102,7 @@ export default {
       let json = { email: this.email, password: this.password };
       console.log(json);
 
-      await fetch(`http://localhost:3000/app/users/login`, {
+      await fetch(`https://webapps-backend.onrender.com/app/users/login`, {
         method: "PATCH",
         body: JSON.stringify(json),
         credentials: "include",

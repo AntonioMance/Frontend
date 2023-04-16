@@ -16,7 +16,7 @@ export default {
 
   methods: {
     async getMessages() {
-      await fetch(`http://localhost:3000/app/messages/1`, {
+      await fetch(`https://webapps-backend.onrender.com/app/messages/1`, {
         method: "GET",
         credentials: "include",
         headers: {

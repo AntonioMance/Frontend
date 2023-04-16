@@ -79,7 +79,7 @@ export default {
 
 <style scoped>
 .image {
-  background-image: url(../assets/redbackground.jpg);
+  background-image: url(../assets/redbackground.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -86,7 +86,7 @@ computed: {
     },
     async getMessages() {
       try {
-        const response = await fetch("http://localhost:3000/app/messages/99"); 
+        const response = await fetch("https://webapps-backend.onrender.com/app/messages/99"); 
         if (response.ok) {
           this.messages = await response.json();
         } else {
@@ -108,7 +108,7 @@ computed: {
         this.inputMessage = "";
 
         try {
-          await fetch("http://localhost:3000/app/messages", {
+          await fetch("https://webapps-backend.onrender.com/app/messages", {
             method: "POST",
             credentials: "include", 
             headers: { "Content-Type": "application/json" },
@@ -150,7 +150,7 @@ computed: {
 .container-fluid{
   display: grid;
   grid-template-rows: auto 1fr; 
-  background-image: url(../assets/mainpage.jpeg);
+  background-image: url(../assets/mainpage.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

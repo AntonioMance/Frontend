@@ -166,7 +166,7 @@ export default {
 .home-page-user , .home-page-guest {
 display: grid;
 grid-template-rows: auto 1fr; 
-background-image: url(../assets/mainpage.jpeg);
+background-image: url(../assets/mainpage.png);
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center center;

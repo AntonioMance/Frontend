@@ -130,7 +130,7 @@ export default {
   },
   methods: {
     async getMyGameList(username) {
-        await fetch(`http://localhost:3000/app/users/getGames/${username}`, {
+        await fetch(`https://webapps-backend.onrender.com/app/users/getGames/${username}`, {
         method: "GET",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -146,7 +146,7 @@ export default {
     },
 async changeStatus(status) {
       try {
-        const response = await fetch("http://localhost:3000/app/users/AddStatus", {
+        const response = await fetch("https://webapps-backend.onrender.com/app/users/AddStatus", {
           method: "POST",
           credentials: "include",
           headers: {
@@ -168,7 +168,7 @@ async changeStatus(status) {
 
     async displayStatus(username) {
       try {
-        const response = await fetch(`http://localhost:3000/app/users/Getstatus/${username}`, {
+        const response = await fetch(`https://webapps-backend.onrender.com/app/users/Getstatus/${username}`, {
           method: "GET",
           credentials: "include",
           headers: { "Content-Type": "application/json" },
@@ -200,7 +200,7 @@ async changeStatus(status) {
     }, 
     async getFollowList(username) {
   try {
-    const response = await fetch(`http://localhost:3000/app/users/getFollowList/${username}`, {
+    const response = await fetch(`https://webapps-backend.onrender.com/app/users/getFollowList/${username}`, {
       method: "GET",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -218,7 +218,7 @@ async changeStatus(status) {
 },
 async getAvailability(username) {
       try {
-        const response = await fetch(`http://localhost:3000/app/users/getAvailability/${username}`, {
+        const response = await fetch(`https://webapps-backend.onrender.com/app/users/getAvailability/${username}`, {
           method: "GET",
           credentials: "include",
           headers: { "Content-Type": "application/json" },
@@ -236,7 +236,7 @@ async getAvailability(username) {
     },
       async getPeoplePlayedWith(username) {
     try {
-      const response = await fetch(`http://localhost:3000/app/users/getPeoplePlayedWith/${username}`, {
+      const response = await fetch(`https://webapps-backend.onrender.com/app/users/getPeoplePlayedWith/${username}`, {
         method: "GET",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -276,7 +276,7 @@ async getAvailability(username) {
   background-position: center center;
   background-attachment: fixed;
   min-height: 100vh; 
-  background-image: url(../assets/mainpage.jpeg);
+  background-image: url(../assets/mainpage.png);
 }
 
 .main-content {

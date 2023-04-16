@@ -331,7 +331,7 @@ export default {
   },
   methods: {
     async getMyGameList() {
-      await fetch(`http://localhost:3000/app/users/getGames`, {
+      await fetch(`https://webapps-backend.onrender.com/app/users/getGames`, {
         method: "GET",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -349,7 +349,7 @@ export default {
     async addGame() {
       try {
         const res = await fetch(
-          `http://localhost:3000/app/users/addGame/${this.addGameInput}`,
+          `https://webapps-backend.onrender.com/app/users/addGame/${this.addGameInput}`,
           {
             method: "POST",
             credentials: "include",
@@ -381,7 +381,7 @@ export default {
     async removeGame(gameName) {
       try {
         const res = await fetch(
-          `http://localhost:3000/app/users/removeGame/${gameName}`,
+          `https://webapps-backend.onrender.com/app/users/removeGame/${gameName}`,
           {
             method: "POST",
             credentials: "include",
@@ -410,7 +410,7 @@ export default {
     async changeStatus(status) {
       try {
         const response = await fetch(
-          "http://localhost:3000/app/users/AddStatus",
+          "https://webapps-backend.onrender.com/app/users/AddStatus",
           {
             method: "POST",
             credentials: "include",
@@ -435,7 +435,7 @@ export default {
     async displayStatus() {
       try {
         const response = await fetch(
-          "http://localhost:3000/app/users/Getstatus",
+          "https://webapps-backend.onrender.com/app/users/Getstatus",
           {
             method: "GET",
             credentials: "include",
@@ -471,7 +471,7 @@ export default {
     async followUser() {
       try {
         const response = await fetch(
-          `http://localhost:3000/app/users/follow/${this.usernameToFollow}`,
+          `https://webapps-backend.onrender.com/app/users/follow/${this.usernameToFollow}`,
           {
             method: "POST",
             credentials: "include",
@@ -494,7 +494,7 @@ export default {
     async unfollowUser() {
       try {
         const response = await fetch(
-          `http://localhost:3000/app/users/unfollow/${this.usernameToUnfollow}`,
+          `https://webapps-backend.onrender.com/app/users/unfollow/${this.usernameToUnfollow}`,
           {
             method: "POST",
             credentials: "include",
@@ -520,7 +520,7 @@ export default {
     async getFollowList() {
       try {
         const response = await fetch(
-          "http://localhost:3000/app/users/getFollowList",
+          "https://webapps-backend.onrender.com/app/users/getFollowList",
           {
             method: "GET",
             credentials: "include",
@@ -542,7 +542,7 @@ export default {
     async getAvailability() {
       try {
         const response = await fetch(
-          "http://localhost:3000/app/users/getAvailability",
+          "https://webapps-backend.onrender.com/app/users/getAvailability",
           {
             method: "GET",
             credentials: "include",
@@ -565,7 +565,7 @@ export default {
       if (this.startTime && this.endTime) {
         try {
           const response = await fetch(
-            "http://localhost:3000/app/users/addAvailability",
+            "https://webapps-backend.onrender.com/app/users/addAvailability",
             {
               method: "POST",
               credentials: "include",
@@ -597,7 +597,7 @@ export default {
       const availabilityToRemove = this.availability[index];
       try {
         const response = await fetch(
-          "http://localhost:3000/app/users/removeAvailability",
+          "https://webapps-backend.onrender.com/app/users/removeAvailability",
           {
             method: "POST",
             credentials: "include",
@@ -619,7 +619,7 @@ export default {
     async getUserMessages() {
       try {
         const response = await fetch(
-          "http://localhost:3000/app/users/getUserMessages",
+          "https://webapps-backend.onrender.com/app/users/getUserMessages",
           {
             method: "GET",
             credentials: "include",
@@ -652,7 +652,7 @@ export default {
     async updatePeoplePlayedWith(value) {
       try {
         const response = await fetch(
-          "http://localhost:3000/app/users/updatePeoplePlayedWith",
+          "https://webapps-backend.onrender.com/app/users/updatePeoplePlayedWith",
           {
             method: "POST",
             credentials: "include",
@@ -676,7 +676,7 @@ export default {
     async getPeoplePlayedWith() {
       try {
         const response = await fetch(
-          "http://localhost:3000/app/users/getPeoplePlayedWith",
+          "https://webapps-backend.onrender.com/app/users/getPeoplePlayedWith",
           {
             method: "GET",
             credentials: "include",
@@ -716,7 +716,7 @@ export default {
   background-position: center center;
   background-attachment: fixed;
   min-height: 100vh;
-  background-image: url(../assets/mainpage.jpeg);
+  background-image: url(../assets/mainpage.png);
 }
 body {
   background-size: cover;
