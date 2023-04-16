@@ -41,15 +41,13 @@
             </button>
             <h2 style="color: rgb(134, 134, 134);">
               Dont have an account?
-              <a href="../Register" style="color: rgb(255, 135, 94);             -webkit-text-stroke-width: 1px;   
-            -webkit-text-stroke-color: red;  " class="text-decoration-none"
-                >Register
-              </a>
+              <router-link to="/Register" style="color: rgb(255, 135, 94);-webkit-text-stroke-width: 1px;   
+            -webkit-text-stroke-color: red;  " class="text-decoration-none">Register</router-link>
             </h2>
             <h3 class="text-center" style="color: rgb(134, 134, 134);">
               back to
-              <a href="../"  style="color: rgb(255, 135, 94);             -webkit-text-stroke-width: 1px;   
-            -webkit-text-stroke-color: red;" class="text-decoration-none">Home</a>
+              <router-link to="/" style="color: rgb(255, 135, 94);-webkit-text-stroke-width: 1px;   
+            -webkit-text-stroke-color: red;" class="text-decoration-none">Home</router-link>
             </h3>
           </div>
         </div>

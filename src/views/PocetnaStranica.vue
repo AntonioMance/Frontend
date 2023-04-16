@@ -33,7 +33,7 @@
                 <div class="row pt-5">
                   <div class="col-4 offset-4  ">
                     <div class="d-grid ">
-                      <a style="color: rgb(255, 125, 94);" class="btn btn-dark text-start  rounded-4 btn-lg" href="../Register">Register</a>
+                      <router-link to="/Register" style="color: rgb(255, 125, 94);" class="btn btn-dark text-start  rounded-4 btn-lg">Register</router-link>
                     </div>
                 </div>
               </div>
@@ -41,9 +41,8 @@
               <li>
                 <div class="row  ">
                   <div class="col-4 offset-4 gy-4 ">
-                    <div class="d-grid ">
-                      <a  style="color: rgb(255, 125, 94);" class="btn btn-dark text-start  rounded-4 btn-lg" href="../login">Log in</a>
-                        
+                    <div class="d-grid ">    
+                        <router-link to="/login" style="color: rgb(255, 125, 94);" class="btn btn-dark text-start  rounded-4 btn-lg">Log in</router-link>
                     </div>
                 </div>
               </div>
